@@ -1,0 +1,22 @@
+<head>
+    <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+	<link rel="shortcut icon" type="image/x-icon" href="${currentDesign.path}/favicon.ico">
+    <sly data-sly-test="${pageProperties.searchIndex}">
+   		  <meta name="robots" content="noindex"/>  
+    </sly>
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+	<meta data-sly-call="${clientlib.all @ categories='apps.responsive.core'}" data-sly-unwrap/>
+	<sly data-sly-include="headlibs.html" data-sly-unwrap />
+  	<sly data-sly-include="/libs/wcm/core/components/init/init.jsp" data-sly-unwrap />
+	<title>${currentPage.title || currentPage.getName}</title>	
+	<!--[if lt IE 9]>  
+        <script src="/etc/designs/responsive/clientlib_base/js/html5shiv.min.js"></script>
+        <script src="/etc/designs/responsive/clientlib_base/js/respond.min.js"></script>
+   <![endif]-->
+   <sly data-sly-resource="${ @path='.', resourceType='responsive/components/foundation/analytics'}" />	
+</head>  
